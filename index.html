@@ -1,0 +1,105 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SUBDOMAIN MAKER — GRATIS & INSTAN</title>
+  <link rel="stylesheet" href="./style.css" />
+  <!-- Script Resmi Cloudflare Turnstile -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</head>
+<body>
+  <main class="page-wrapper">
+    <section class="card">
+      <!-- Badge Pojok Neubrutalism -->
+      <div class="badge-free">100% GRATIS</div>
+
+      <header class="card-header">
+        <h1 class="title">SUBDOMAIN MAKER</h1>
+        <p class="subtitle">Daftarkan subdomain kustom Anda langsung ke DNS Cloudflare dalam hitungan detik.</p>
+      </header>
+
+      <form id="subdomainForm" novalidate>
+        <!-- Input Nama Subdomain -->
+        <div class="field-group">
+          <label class="field-label" for="subdomainInput">NAMA SUBDOMAIN</label>
+          <div class="subdomain-row">
+            <input
+              type="text"
+              id="subdomainInput"
+              name="subdomain"
+              class="input-control"
+              placeholder="proyek-keren"
+              autocomplete="off"
+              required
+            />
+            <span class="domain-addon">.domainkamu.com</span>
+          </div>
+          <small class="field-help">Gunakan huruf (a-z), angka (0-9), dan strip (-).</small>
+        </div>
+
+        <!-- Dropdown Tipe Record -->
+        <div class="field-group">
+          <label class="field-label" for="typeSelect">TIPE DNS RECORD</label>
+          <select id="typeSelect" name="type" class="select-control">
+            <option value="A">A (Alamat IPv4)</option>
+            <option value="AAAA">AAAA (Alamat IPv6)</option>
+            <option value="CNAME">CNAME (Hostname / Domain)</option>
+            <option value="TXT">TXT (Teks / Verifikasi)</option>
+          </select>
+        </div>
+
+        <!-- Input Content -->
+        <div class="field-group">
+          <label class="field-label" for="contentInput" id="contentLabel">ISI TARGET RECORD</label>
+          <input
+            type="text"
+            id="contentInput"
+            name="content"
+            class="input-control"
+            placeholder="192.0.2.1"
+            autocomplete="off"
+            required
+          />
+          <small class="field-help" id="contentHelp">Masukkan alamat IPv4 valid (contoh: 192.0.2.1).</small>
+        </div>
+
+        <!-- Checkbox Proxy Cloudflare (Sembunyi otomatis saat TXT dipilih) -->
+        <div class="field-group" id="proxyWrapper">
+          <label class="checkbox-card" for="proxiedInput">
+            <input type="checkbox" id="proxiedInput" name="proxied" class="checkbox-control" checked />
+            <span class="checkbox-label-text">
+              AKTIFKAN CLOUDFLARE PROXY (CDN &amp; SSL)
+            </span>
+          </label>
+        </div>
+
+        <!-- Widget Cloudflare Turnstile -->
+        <div class="field-group">
+          <label class="field-label">VERIFIKASI KEAMANAN</label>
+          <div class="turnstile-container">
+            <!-- Ganti data-sitekey dengan Site Key Turnstile milik Anda -->
+            <div
+              class="cf-turnstile"
+              data-sitekey="0x4AAAAAAABBBBBBBBBBBBBB"
+              data-theme="light"
+            ></div>
+          </div>
+        </div>
+
+        <!-- Tombol Submit -->
+        <button type="submit" id="submitButton" class="btn-submit">
+          BUAT SUBDOMAIN SEKARANG
+        </button>
+      </form>
+
+      <!-- Area Pesan Hasil Sukses / Error -->
+      <div id="alertBox" class="alert-box hidden" role="alert" aria-live="assertive"></div>
+    </section>
+  </main>
+
+  <script src="./main.js"></script>
+</body>
+</html>
+```
