@@ -1,0 +1,76 @@
+
+/* ========================================================================== VARIABEL CSS WAJIB — TEMA NEUBRUTALISM ========================================================================== */ :root { --bg: #e0f2fe; --surface: #ffffff; --ink: #0c1e3e; --accent: #2563eb; --accent-hover: #1d4ed8; --danger: #dc2626; --success: #16a34a; --yellow: #fde047; --border: 3px solid var(--ink); --shadow-sm: 2px 2px 0 var(--ink); --shadow: 4px 4px 0 var(--ink); --shadow-lg: 6px 6px 0 var(--ink); }
+
+{ box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-weight: 600; background-color: var(--bg); /* Pattern titik-titik halus warna --ink opacity rendah */ background-image: radial-gradient(rgba(12, 30, 62, 0.16) 1.5px, transparent 1.5px); background-size: 20px 20px; color: var(--ink); min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 32px 16px; }
+
+.page-wrapper { width: 100%; max-width: 540px; }
+
+/* Card Utama: bg putih, border 3px, shadow 6px 6px 0, padding 32px */ .card { position: relative; background-color: var(--surface); border: var(--border); box-shadow: var(--shadow-lg); padding: 32px; border-radius: 4px; }
+
+/* Badge "100% GRATIS" warna --yellow, border tebal, shadow hard, rotate -3deg di pojok card */ .badge-free { position: absolute; top: -18px; right: -12px; background-color: var(--yellow); color: var(--ink); border: var(--border); box-shadow: var(--shadow); padding: 6px 14px; font-weight: 900; font-size: 0.9rem; text-transform: uppercase; transform: rotate(-3deg); border-radius: 4px; }
+
+.card-header { margin-bottom: 24px; padding-bottom: 16px; border-bottom: var(--border); }
+
+.title { font-size: 2rem; font-weight: 900; text-transform: uppercase; letter-spacing: -0.8px; line-height: 1.1; margin-bottom: 8px; }
+
+.subtitle { font-size: 0.95rem; font-weight: 600; }
+
+.field-group { margin-bottom: 20px; }
+
+.field-group.hidden { display: none; }
+
+.field-label { display: block; font-weight: 800; font-size: 0.88rem; text-transform: uppercase; margin-bottom: 8px; }
+
+.subdomain-row { display: flex; align-items: stretch; }
+
+.input-control, .select-control { width: 100%; background-color: var(--surface); color: var(--ink); border: var(--border); box-shadow: var(--shadow-sm); padding: 12px 14px; font-family: inherit; font-size: 1rem; font-weight: 700; border-radius: 4px; outline: none; transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease; }
+
+.subdomain-row .input-control { border-top-right-radius: 0; border-bottom-right-radius: 0; border-right: none; }
+
+.domain-addon { background-color: var(--yellow); color: var(--ink); border: var(--border); box-shadow: var(--shadow-sm); padding: 12px 14px; font-weight: 900; font-size: 0.95rem; display: flex; align-items: center; white-space: nowrap; border-top-right-radius: 4px; border-bottom-right-radius: 4px; }
+
+/* Input fokus: shadow jadi 4px 4px 0 + border --accent */ .input-control:focus, .select-control:focus { border-color: var(--accent); box-shadow: var(--shadow); }
+
+.input-control:hover, .select-control:hover { transform: translate(2px, 2px); box-shadow: var(--shadow-sm); }
+
+.field-help { display: block; margin-top: 6px; font-size: 0.8rem; font-weight: 600; }
+
+/* Checkbox custom kotak border 3px, checked isi --accent */ .checkbox-card { display: flex; align-items: center; gap: 12px; padding: 12px 14px; background-color: var(--bg); border: var(--border); box-shadow: var(--shadow-sm); border-radius: 4px; cursor: pointer; user-select: none; transition: transform 120ms ease, box-shadow 120ms ease; }
+
+.checkbox-card:hover { transform: translate(2px, 2px); box-shadow: var(--shadow-sm); }
+
+.checkbox-card:active { transform: translate(4px, 4px); box-shadow: none; }
+
+.checkbox-control { appearance: none; -webkit-appearance: none; width: 24px; height: 24px; background-color: var(--surface); border: var(--border); border-radius: 3px; display: grid; place-content: center; cursor: pointer; flex-shrink: 0; }
+
+.checkbox-control::before { content: ""; width: 12px; height: 12px; background-color: var(--surface); transform: scale(0); transition: transform 100ms ease; clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%); }
+
+.checkbox-control:checked { background-color: var(--accent); }
+
+.checkbox-control:checked::before { transform: scale(1); }
+
+.checkbox-label-text { font-weight: 800; font-size: 0.88rem; text-transform: uppercase; }
+
+.turnstile-container { background-color: var(--bg); border: var(--border); box-shadow: var(--shadow-sm); padding: 12px; border-radius: 4px; display: flex; justify-content: center; }
+
+/* Tombol submit: bg --accent, teks putih, uppercase, weight 900 */ .btn-submit { width: 100%; background-color: var(--accent); color: var(--surface); border: var(--border); box-shadow: var(--shadow); padding: 16px 20px; font-family: inherit; font-size: 1.05rem; font-weight: 900; text-transform: uppercase; cursor: pointer; border-radius: 4px; transition: transform 120ms ease, box-shadow 120ms ease, background-color 120ms ease; }
+
+/* Hover: translate(2px,2px) + shadow jadi 2px 2px 0 */ .btn-submit:hover:not(:disabled) { background-color: var(--accent-hover); transform: translate(2px, 2px); box-shadow: var(--shadow-sm); }
+
+/* Active: translate(4px,4px) + shadow hilang */ .btn-submit:active:not(:disabled) { transform: translate(4px, 4px); box-shadow: none; }
+
+.btn-submit:disabled { cursor: not-allowed; }
+
+/* Loading: teks "MEMPROSES..." dengan animasi blinking dots */ @keyframes dotBlink { 0%, 20% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+
+.blink-dot-1 { animation: dotBlink 1.2s infinite 0s; } .blink-dot-2 { animation: dotBlink 1.2s infinite 0.2s; } .blink-dot-3 { animation: dotBlink 1.2s infinite 0.4s; }
+
+/* Kotak Pesan Sukses & Error */ .alert-box { margin-top: 24px; padding: 16px; border: var(--border); box-shadow: var(--shadow); border-radius: 4px; font-size: 0.92rem; }
+
+.alert-box.hidden { display: none; }
+
+/* Success msg: bg hijau terang + border + shadow hard, bold uppercase */ .alert-box.alert-success { background-color: #86efac; color: var(--ink); font-weight: 800; text-transform: uppercase; }
+
+/* Error msg: bg merah terang + border + shadow hard */ .alert-box.alert-error { background-color: #fca5a5; color: var(--ink); font-weight: 700; }
+
