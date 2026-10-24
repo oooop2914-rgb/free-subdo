@@ -4,7 +4,7 @@
  */
 
 // Ganti URL ini dengan URL Worker Cloudflare Anda setelah di-deploy
-const WORKER_API_URL = "https://subdomain-api.usernamekamu.workers.dev/api/create-subdomain";
+const WORKER_API_URL = "https://freesubdo.budibintitan12.workers.dev//api/create-subdomain";
 
 const subdomainForm = document.getElementById("subdomainForm");
 const subdomainInput = document.getElementById("subdomainInput");
